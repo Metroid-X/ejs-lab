@@ -8,10 +8,11 @@
 <body>
     
     <%- include('./partials/nav') %>
+    
 
-    <h1> Menu</h1>
+    <h1><%= locals.name %></h1>
     <ul>
-      <% locals.menu.forEach(item => { %>
+      <% locals.menuItems.forEach(item => { %>
         <li>
           <div>
             <h3><%= item.name %></h3>

@@ -63,9 +63,9 @@ app.get('/menu', (req, res) => {
   res.render('menu.ejs');
 });
 app.get('/menu/:category', (req, res) => {
-  res.locals.menu = RESTAURANT.menu.filter((item) => item.category == req.params)
-  const parameters = req.params;
-  res.render('category.ejs', parameters);
+  res.locals.menuItems = RESTAURANT.menu.filter(item => item.category === req.params.category)
+  res.locals.name = (req.params.category).charAt(0).toUpperCase()+(req.params.category).slice(1);
+  res.render('category.ejs');
 });
 
 
